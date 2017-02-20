@@ -1,0 +1,64 @@
+<?php
+session_start();
+?>
+<body>
+<section id="dropdown-menu-0">
+
+    <nav class="navbar navbar-dropdown navbar-fixed-top">
+    
+        <div class="container">
+
+            <div class="navbar-brand">
+                <span class="navbar-logo"><a href="http://localhost/quizmaster/index.php"><img src="assets/images/quiz-contest-logo-2-724x766-94.jpg" alt="Mobirise"></a></span> 
+                <span><a class="text-white" href="http://localhost/quizmaster/index.php">QuizMaster</a></span>
+            </div>
+            
+            <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                ☰
+            </button>
+
+            <ul class="nav-dropdown collapse pull-xs-right navbar-toggleable-sm nav navbar-nav hide-buttons" id="exCollapsingNavbar">
+			<li class="nav-item">
+			<a class="nav-link link" href="http://localhost/quizmaster/index.php">HOME</a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link link" href="#">QUICK PLAY</a>
+			</li>
+			<?php
+			if(isset($_SESSION['user']) && $_SESSION['user']!=''){
+			?>
+			<li class="nav-item dropdown">
+			<a class="nav-link link dropdown-toggle" href="#" data-toggle="dropdown-submenu" aria-expanded="false"><?php echo $_SESSION['user'];?> </a>
+			<div class="dropdown-menu">
+			<a class="dropdown-item" href="#">My Account</a>
+			<a class="dropdown-item" href="logout.php">Logout</a>
+			</div>
+			</li>
+			<?php
+			}
+			else{
+			?>
+			<li class="nav-item dropdown">
+			<a class="nav-link link dropdown-toggle" href="#" data-toggle="dropdown-submenu" aria-expanded="false">ACCOUNT</a>
+			<div class="dropdown-menu">
+			<a class="dropdown-item" href="common_log.php">Login</a>
+			<a class="dropdown-item" href="common_reg.php">Register</a>
+			</div>
+			</li>
+			<?php
+			}
+			?>
+			
+			<li class="nav-item dropdown open">
+			<a class="nav-link link" href="help.php" aria-expanded="true">HELP</a>
+			</li>
+			<li class="nav-item">
+			<a data-button="" class="nav-link btn btn-default btn-default-outline" href="https://mobirise.com/">DOWNLOAD</a>
+			</li>
+			</ul>
+
+        </div>
+
+    </nav>
+
+</section>
